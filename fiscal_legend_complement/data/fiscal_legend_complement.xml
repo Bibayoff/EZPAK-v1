@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="fiscal_legend_complement_biooni" inherit_id="l10n_mx_edi.cfdiv33">
+            <xpath expr="*" position="inside">
+                <cfdi:Complemento
+                xmlns:cfdi="http://www.sat.gob.mx/cfd/3"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:leyendasFisc="http://www.sat.gob.mx/leyendasFiscales"
+                xsi:schemaLocation="
+                http://www.sat.gob.mx/cfd/3
+                http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd
+                http://www.sat.gob.mx/leyendasFiscales
+                http://www.sat.gob.mx/sitio_internet/cfd/leyendasFiscales/leyendasFisc.xsd">
+                <t t-if="record.partner_id.has_addenda_fiscal_legend">
+                <leyendasFisc:LeyendasFiscales t-att-version="1.0">
+                    <leyendasFisc:Leyenda disposicionFiscal="RGCE" norma="5.2.7" textoLeyenda="&quot;OPERACIÓN VIRTUAL REALIZADA BAJO EL AMPARO DEL ARTICULO 112 DE LA LEY ADUANERA, Y DE CONFORMIDAD CON LAS REGLAS 4.3.21, 5.2.7, 5.2.6 y/o 5.2.4 DE LAS R.G.C.E VIGENTES EGS MEXICO S DE RL DE CV IMMEX 598-2009&quot;"/>
+                </leyendasFisc:LeyendasFiscales>
+                </t>
+                </cfdi:Complemento>
+            </xpath>
+        </template>
+    </data>
+</odoo>
