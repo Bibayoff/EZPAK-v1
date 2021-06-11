@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_form_view" model="ir.ui.view">
+        <field name="name">res.partner.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="property_payment_term_id" position="after">
+                <field name="set_sales_limit"/>
+                <field name="credit_limit" widget='monetary' options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('set_sales_limit','=', False)]}"/>
+                <field name="spent_credit_limit" widget='monetary' options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('set_sales_limit','=', False)]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>
